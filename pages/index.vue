@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-const { data: gamesInStock } = await useFetch('https://jv-stock-backend.onrender.com/api/game/get/stock');
+const { data: gamesInStock } = await useFetch('http://localhost:3621/api/game/get/stock');
 
 </script>
 
 <template>
-    <main class="container p-2 mx-auto">
+    <main class="container px-2 py-8 mx-auto">
         <h1>JV Stock</h1>
 
         <ul class="grid items-center grid-cols-6 gap-4">

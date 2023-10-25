@@ -29,6 +29,9 @@ const toggleMenu = () => {
             <ul class="absolute left-0 flex flex-col items-start justify-center w-full gap-8 overflow-hidden text-2xl font-semibold text-center bg-orange-400 top-16 sm:static sm:flex-row sm:top-0 sm:left-auto sm:w-auto sm:px-0 sm:py-0 sm:text-base sm:bg-transparent sm:font-normal sm:justify-end sm:gap-6 sm:h-auto"
                 :class="(isMenuOpen) ? 'h-[50vh] p-24' : 'h-0'">
                 <li>
+                    <NuxtLink @click="toggleMenu" :to="'/games'" class="border-black hover:border-b">Games</NuxtLink>
+                </li>
+                <li>
                     <NuxtLink @click="toggleMenu" :to="'/connexion'" class="border-black hover:border-b">Connexion
                     </NuxtLink>
                 </li>
