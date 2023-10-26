@@ -1,11 +1,6 @@
-<script setup lang="ts">
+<script setup>
 
-const articles = await $fetch('http://localhost:3621/api/article/get/available', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-});
+const articles = await $fetch('http://localhost:3621/api/article/get/available');
 
 </script>
 

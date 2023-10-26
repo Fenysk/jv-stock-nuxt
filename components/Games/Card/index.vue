@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { defineProps } from 'vue';
 
 const api_url = 'https://jv-stock-backend.onrender.com/api';
@@ -27,7 +27,7 @@ function formattedDate(date) {
         <div class="relative flex w-1/4 h-full rounded-md"> <!-- Left side -->
             <img :src="`${props.article.Purchase.Game.image_url}`" alt="Game image" class="object-cover w-full h-full">
             <img :src="'/images/logo/consoles/' + props.article.Purchase.Game.console + '.png'" alt="Console logo"
-                class="absolute top-0 z-10 object-contain h-8 right-1">
+                class="absolute top-0 z-20 object-contain h-8 right-1">
         </div>
 
         <div class="flex flex-col justify-between w-3/4 gap-2 p-2"> <!-- Right side -->

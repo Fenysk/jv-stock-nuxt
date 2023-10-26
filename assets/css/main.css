@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    @apply text-3xl font-bold my-4;
+}
+
+h2 {
+    @apply text-3xl font-semibold my-2;
+}
+
+h3 {
+    @apply text-lg font-semibold my-2;
+}
+
+h4 {
+    @apply text-lg my-2;
+}
+
+h5 {
+    @apply my-2;
+}
+
+form {
+    @apply flex flex-col gap-4 border-2 rounded-xl border-orange-300 bg-orange-100 p-12 max-w-md mx-auto;
+}
+
+form input {
+    @apply border-2 border-orange-200 rounded-lg px-4 py-2 !important;
+}
+
+form button {
+    @apply border-2 border-orange-300 rounded-lg px-4 py-2 w-fit font-semibold bg-white !important;
+}
+
+form button.button--secondary {
+    @apply border-none bg-transparent font-normal !important;
+}

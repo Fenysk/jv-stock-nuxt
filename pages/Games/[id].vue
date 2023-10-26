@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 const route = useRoute();
 const article_id = route.params.id;
@@ -10,7 +10,7 @@ const article = await $fetch('http://localhost:3621/api/article/get/' + article_
     <main class="container px-2 pb-8 mx-auto">
         <article class="flex flex-col gap-8 lg:flex-row ">
 
-            <div id="Game" class="overflow-hidden bg-white shadow-xl lg:w-2/5 rounded-b-xl">
+            <div id="Game" class="overflow-hidden bg-white shadow-md lg:w-2/5 rounded-b-xl">
 
                 <div id="Banner" class="relative flex items-end w-full h-72"
                     :style="`background-image: url('${article.Purchase.Game.image_url}'); background-size: cover; background-position: center;`">
@@ -57,7 +57,7 @@ const article = await $fetch('http://localhost:3621/api/article/get/' + article_
             </div>
 
 
-            <div class="flex flex-col gap-4 p-4 bg-orange-100 rounded-lg shadow-xl lg:w-3/5 h-fit">
+            <div class="flex flex-col gap-4 p-4 bg-orange-100 rounded-lg border border-orange-200 shadow-lg lg:w-3/5 h-fit lg:mt-8">
 
                 <div id="Seller" class="flex items-center gap-4">
                     <img :src="`${article.User.avatar_url}`" alt="Seller avatar"
@@ -72,7 +72,7 @@ const article = await $fetch('http://localhost:3621/api/article/get/' + article_
                 </div>
 
                 <div id="Details">
-                    <p class="mb-4 text-3xl font-semibold whitespace-nowrap">{{ article.title }}</p>
+                    <p class="mb-4 text-2xl font-semibold">{{ article.title }}</p>
 
                     <GamesGalerie :images_url="article.images_url" />
 
