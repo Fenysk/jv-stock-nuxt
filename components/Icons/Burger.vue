@@ -1,24 +1,10 @@
+
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    viewBox="0 0 14 14"
-  >
-    <g
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="13" height="13" x=".5" y=".5" rx="1"></rect>
-      <path d="M4.5 4.5h5M4.5 7h5m-5 2.5h5"></path>
-    </g>
-  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18q-.425 0-.713-.288T3 17q0-.425.288-.713T4 16h16q.425 0 .713.288T21 17q0 .425-.288.713T20 18H4Zm0-5q-.425 0-.713-.288T3 12q0-.425.288-.713T4 11h16q.425 0 .713.288T21 12q0 .425-.288.713T20 13H4Zm0-5q-.425 0-.713-.288T3 7q0-.425.288-.713T4 6h16q.425 0 .713.288T21 7q0 .425-.288.713T20 8H4Z"></path></svg>
 </template>
 
 <script lang="ts">
 export default {
-  name: "StreamlineInterfaceSettingMenuParallelHamburgerSquareNavigationParallelHamburgerButtonmenuSquare",
-};
+  name: 'MaterialSymbolsMenuRounded'
+}
 </script>

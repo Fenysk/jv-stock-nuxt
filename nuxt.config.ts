@@ -5,7 +5,7 @@ export default defineNuxtConfig({
         "@": resolve(__dirname, "/"),
     },
     css: ["~/assets/css/main.css"],
-    devtools: { enabled: true },
+    devtools: { enabled: false },
     modules: ["@nuxtjs/tailwindcss", "@vueuse/nuxt", "@pinia/nuxt"],
     postcss: {
         plugins: {

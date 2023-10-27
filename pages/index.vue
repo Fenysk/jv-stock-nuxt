@@ -23,10 +23,5 @@ const { data: gamesInStock } = await useFetch(
                 </NuxtLink>
             </li>
         </ul>
-
-        <div v-if="store.user">
-            <h2>User</h2>
-            <pre>{{ store.user }}</pre>
-        </div>
     </main>
 </template>
