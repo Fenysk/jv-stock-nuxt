@@ -3,15 +3,15 @@ import { useStore } from "~/store/store";
 export default defineNuxtRouteMiddleware((to, from) => {
     const store = useStore();
 
-    let loggedIn = false;
+    let isAdmin = false;
     
-    if (store.token && store.user) {
-        loggedIn = true;
+    if (store.token && store.user.roles.includes("ADMIN")) {
+        isAdmin = true;
     }
 
-    if (!loggedIn && to.path !== "/connexion") {
+    if (!isAdmin && to.path !== "/connexion") {
         return navigateTo("/connexion");
-    } else if (loggedIn && to.path === "/connexion") {
+    } else if (isAdmin && to.path === "/connexion") {
         return navigateTo("/dashboard");
     }
 });

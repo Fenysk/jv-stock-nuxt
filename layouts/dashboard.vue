@@ -1,7 +1,11 @@
+<script setup>
+import { useStore } from "~/store/store";
+const store = useStore();
+</script>
 <template>
     <div class="DashboardLayout">
-        <p>Salut, ceci est le layout du dashboard</p>
-        <NuxtLink class="underline" to="/">Retour à la page d'accueil</NuxtLink>
+        <CommonHeader />
+        <DashboardHeader />
         <slot />
     </div>
 </template>

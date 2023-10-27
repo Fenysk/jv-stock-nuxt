@@ -17,7 +17,7 @@ const toggleMenu = () => {
             <div id="branding">
                 <NuxtLink :to="'/'" class="flex items-center gap-4">
                     <IconsLogo class="w-14 h-fit aspect-square rounded-lg hover:-rotate-12 transition" />
-                    <span class="text-4xl font-extrabold tracking-widest">PlaySwap</span>
+                    <span class="text-4xl font-extrabold tracking-widest">Play&Swap</span>
                 </NuxtLink>
             </div>
             <div id="burger" class="relative z-10 flex items-center justify-center w-8 h-8 lg:hidden">
