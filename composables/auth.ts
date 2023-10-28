@@ -26,11 +26,8 @@ export const useAuth = () => {
 
             navigateTo("/dashboard");
         } catch (error) {
-            if (error.response.status === 401) {
-                alert("Wrong email or password");
-            } else {
-                alert(error);
-            }
+            alert(error.response.data.message);
+            throw error;
         }
     };
 

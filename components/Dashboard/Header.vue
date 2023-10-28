@@ -6,7 +6,7 @@ const store = useStore();
 <template>
     <div
         id="DashboardHeader"
-        class="w-full py-4 bg-orange-200 border-y-4 border-orange-400"
+        class="w-full py-4 bg-orange-200 border-b-4 border-orange-500"
     >
         <div class="container mx-auto flex justify-between items-center">
             <div>

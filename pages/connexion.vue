@@ -10,15 +10,21 @@ const formData = ref({
     password: "Admin",
 });
 
+const loading = ref(false);
 const handleSubmit = async () => {
+    loading.value = true;
     const { username, email, password } = formData.value;
 
-    if (mode.value === "register") {
-        await register(username, email, password);
-        return;
-    }
+    try {
+        if (mode.value === "register") {
+            await register(username, email, password);
+            return;
+        }
 
-    await login(email, password);
+        await login(email, password);
+    } catch (error) {
+        loading.value = false;
+    }
 };
 
 const mode = ref("login");
@@ -29,40 +35,59 @@ const switchMode = () => {
 
 <template>
     <main class="container px-2 py-8 mx-auto">
-        <form @submit.prevent="handleSubmit">
-            <h1 class="text-center">Connexion</h1>
+        <form @submit.prevent="handleSubmit" class="max-w-lg">
+            <h1 class="mb-0">Bonjour,</h1>
+            <p class="text-lg mb-4">
+                Merci de renseigner les informations demandées pour vous
+                connecter.
+            </p>
 
             <div
                 id="Username"
                 class="flex flex-col gap-2"
                 v-if="mode === 'register'"
             >
-                <label for="username" class="text-lg">Nom d'utilisateur</label>
+                <label for="username">Nom d'utilisateur</label>
                 <input v-model="formData.username" type="text" />
             </div>
 
             <div id="Email" class="flex flex-col gap-2">
-                <label for="email" class="text-lg">Email</label>
+                <label for="email">Email</label>
                 <input v-model="formData.email" type="email" />
             </div>
 
             <div id="Password" class="flex flex-col gap-2">
-                <label for="password" class="text-lg">Mot de passe</label>
+                <label for="password">Mot de passe</label>
                 <input v-model="formData.password" type="password" />
             </div>
 
-            <div class="flex justify-between gap-4">
+            <button type="submit" v-if="!loading" class="group">
+                {{ mode === "login" ? "Se connecter" : "S'inscrire" }}
+                <IconsArrowRight class="inline ml-2 text-xl group-hover:translate-x-1 transition" />
+            </button>
+            <button type="submit" disabled v-else>
+                {{
+                    mode === "login"
+                        ? "Connexion en cours..."
+                        : "Inscription en cours..."
+                }}
+            </button>
+
+            <p>
+                {{
+                    mode === "login"
+                        ? "Vous n'avez pas de compte ?"
+                        : "J'ai déjà un compte."
+                }}
+
                 <button @click.prevent="switchMode" class="button--secondary">
                     {{
                         mode === "login"
-                            ? "Je n'ai pas de compte"
-                            : "J'ai déjà un compte"
+                            ? "Créer un compte"
+                            : "Je souhaite me connecter"
                     }}
                 </button>
-                <button type="submit">
-                    {{ mode === "login" ? "Se connecter" : "S'inscrire" }}
-                </button>
-            </div>
+            </p>
         </form>
     </main>
 </template>

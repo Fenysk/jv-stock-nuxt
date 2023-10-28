@@ -20,8 +20,8 @@ export const useUpload = () => {
                 }
             );
 
-            const createdArticle = response.data;
-            return createdArticle;
+            const image_url = API_URL + '/' + response.data.path;
+            return image_url;
         } catch (error) {
             throw error;
         }

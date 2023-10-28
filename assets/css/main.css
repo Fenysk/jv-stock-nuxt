@@ -7,7 +7,7 @@ h1 {
 }
 
 h2 {
-    @apply text-3xl font-semibold my-2;
+    @apply text-2xl font-semibold my-2;
 }
 
 h3 {
@@ -23,17 +23,29 @@ h5 {
 }
 
 form {
-    @apply flex flex-col gap-4 border-2 rounded-xl border-orange-300 bg-orange-100 p-12 max-w-md mx-auto;
+    @apply flex flex-col gap-4 border-2 rounded-xl border-orange-300 bg-orange-100 p-12 mx-auto;
+}
+
+form label {
+    @apply text-xl;
 }
 
 form input {
-    @apply border-2 border-orange-200 rounded-lg px-4 py-2 !important;
+    @apply border-2 border-orange-200 rounded-lg px-6 py-3 text-lg !important;
+}
+
+form input[type="file"] {
+    @apply p-0 cursor-pointer file:border-0 file:py-3 file:px-6 file:mr-6 file:border-r-2 file:border-orange-200 file:bg-transparent file:font-semibold hover:bg-orange-50 bg-white !important;
 }
 
 form button {
-    @apply border-2 border-orange-300 rounded-lg px-4 py-2 w-fit font-semibold bg-white !important;
+    @apply border-2 border-orange-300 bg-orange-600 rounded-lg mt-4 font-semibold text-white text-lg px-6 py-3 !important;
+}
+
+form button:disabled {
+    @apply bg-orange-300 text-orange-700 !important;
 }
 
 form button.button--secondary {
-    @apply border-none bg-transparent font-normal !important;
+    @apply border-none text-black underline bg-transparent w-fit px-2 py-0 !important;
 }
