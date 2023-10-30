@@ -1,6 +1,7 @@
 <script setup>
 
-const articles = await $fetch('http://localhost:3621/api/article/get/available');
+const { getAllAvailableArticles } = useArticles();
+const articles = await getAllAvailableArticles();
 
 </script>
 

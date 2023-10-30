@@ -1,8 +1,6 @@
 <script setup>
 const { formattedDate } = useDate();
 
-const api_url = "https://jv-stock-backend.onrender.com/api";
-
 const props = defineProps({
     article: Object,
 });

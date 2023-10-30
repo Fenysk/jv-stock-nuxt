@@ -1,5 +1,4 @@
 <script setup>
-const api_url = "https://jv-stock-backend.onrender.com/api";
 const { formattedReverseDate } = useDate();
 
 const props = defineProps({

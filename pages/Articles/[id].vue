@@ -2,7 +2,9 @@
 
 const route = useRoute();
 const article_id = route.params.id;
-const article = await $fetch('http://localhost:3621/api/article/get/' + article_id);
+
+const { getArticleById } = useArticles();
+const article = await getArticleById(article_id);
 
 </script>
 
