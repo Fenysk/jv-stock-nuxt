@@ -41,6 +41,24 @@ export const useArticles = () => {
         }
     };
 
+    const getMySoldedArticles = async (search?: string) => {
+        try {
+            const response = await axios.get(`${API_URL}/article/get/mine/solded`, {
+                params: {
+                    name: search,
+                },
+                headers: {
+                    Authorization: `Bearer ${store.token}`,
+                },
+            });
+            const articles = response.data;
+
+            return articles;
+        } catch (error) {
+            throw error;
+        }
+    };
+
     const getArticleById = async (id: number) => {
         try {
             const response = await axios.get(`${API_URL}/article/get/${id}`, {
@@ -115,6 +133,7 @@ export const useArticles = () => {
     return {
         getAllAvailableArticles,
         getMyArticles,
+        getMySoldedArticles,
         getArticleById,
         createArticle,
         updateArticle,
