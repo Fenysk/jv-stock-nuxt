@@ -74,7 +74,7 @@ const article = await $fetch('http://localhost:3621/api/article/get/' + article_
                 <div id="Details">
                     <p class="mb-4 text-2xl font-semibold">{{ article.title }}</p>
 
-                    <GamesGalerie :images_url="article.images_url" />
+                    <HomeArticleGalerie :images_url="article.images_url" />
 
                     <p class="mt-4 text-lg">{{ article.description }}</p>
                 </div>

@@ -9,14 +9,14 @@ definePageMeta({
     middleware: ["auth", "admin"],
 });
 
-const articles = ref([]);
+const myArticles = ref([]);
 
-const fetchArticles = async (search?: string) => {
-    articles.value = await getMyArticles(search);
+const fetchMyArticles = async (search?: string) => {
+    myArticles.value = await getMyArticles(search);
 };
 
 onMounted(async () => {
-    await fetchArticles();
+    await fetchMyArticles();
 });
 </script>
 
@@ -24,7 +24,12 @@ onMounted(async () => {
     <main class="px-2 py-8 container mx-auto">
         <h1>Articles</h1>
 
-        <input @keyup="fetchArticles($event.target.value)" type="text" />
-        <pre>{{ articles }}</pre>
+        <input @keyup="fetchMyArticles($event.target.value)" type="text" />
+        
+        <ul class="flex gap-4 flex-wrap">
+            <li v-for="article in myArticles" :key="article.id">
+                {{ article.title }}
+            </li>
+        </ul>
     </main>
 </template>

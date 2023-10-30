@@ -7,7 +7,7 @@ export const useArticles = () => {
 
     const getAllAvailableArticles = async (search?: string) => {
         try {
-            const response = await axios.get(`${API_URL}/article/get/all`, {
+            const response = await axios.get(`${API_URL}/article/get/available`, {
                 params: {
                     name: search,
                 },

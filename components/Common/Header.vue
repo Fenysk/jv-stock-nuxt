@@ -18,12 +18,14 @@ const toggleMenu = () => {
         <nav
             class="container flex items-center justify-between gap-6 mx-auto lg:gap-16"
         >
-            <div id="branding">
+            <div id="Branding">
                 <NuxtLink :to="'/'" class="flex items-center gap-4">
                     <IconsLogo
-                        class="w-10 h-fit aspect-square rounded-lg hover:-rotate-12 transition"
+                        id="Logo"
+                        class="w-10 h-fit aspect-square rounded-lg transition"
                     />
-                    <span class="text-2xl font-extrabold tracking-widest whitespace-nowrap"
+                    <span
+                        class="text-2xl font-extrabold tracking-widest whitespace-nowrap"
                         >Play & Swap</span
                     >
                 </NuxtLink>
@@ -62,10 +64,10 @@ const toggleMenu = () => {
                 <li
                     class="flex gap-2 items-center text-lg rounded-lg hover:text-orange-500"
                 >
-                    <IconsController />
-                    <NuxtLink @click="toggleMenu" :to="'/games'"
-                        >Games</NuxtLink
-                    >
+                    <IconsCart />
+                    <NuxtLink @click="toggleMenu" :to="'/cart'"
+                        >Panier
+                    </NuxtLink>
                 </li>
                 <li
                     class="flex gap-2 items-center text-lg rounded-lg hover:text-orange-500"
@@ -89,3 +91,9 @@ const toggleMenu = () => {
         </nav>
     </header>
 </template>
+
+<style scoped>
+#Branding:hover #Logo {
+    @apply -rotate-12;
+}
+</style>

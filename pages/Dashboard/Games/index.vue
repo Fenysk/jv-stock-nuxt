@@ -25,6 +25,11 @@ onMounted(async () => {
         <h1>Games</h1>
 
         <input @keyup="fetchGames($event.target.value)" type="text" />
-        <pre>{{ games }}</pre>
+
+        <ul>
+            <li v-for="game in games" :key="game.id">
+                <NuxtLink :to="`/dashboard/games/${game.id}`">{{ game.name }}</NuxtLink>
+            </li>
+        </ul>
     </main>
 </template>

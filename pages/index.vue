@@ -2,14 +2,15 @@
 import { useStore } from "~/store/store";
 const store = useStore();
 
-const { data: gamesInStock } = await useFetch(
-    "http://localhost:3621/api/game/get/stock"
-);
+const { getAllAvailableArticles } = useArticles();
+const articles = await getAllAvailableArticles();
 </script>
 
 <template>
     <main class="container px-2 py-8 mx-auto">
-        <h1></h1>
+        <h1 class="text-center text-xl mb-8">
+            Des dizaines de consoles et de jeux-vidéo selon vos critères !
+        </h1>
 
         <section
             id="Hero"
@@ -17,26 +18,42 @@ const { data: gamesInStock } = await useFetch(
         >
             <p>Vous avez des jeux qui prennent la poussière ?</p>
             <NuxtLink
-                to="/sell"
+                to="/dashboard/sell"
                 class="ml-4 px-4 py-2 rounded-xl bg-orange-500 text-white font-bold"
                 >Vendez-les !</NuxtLink
             >
         </section>
 
-        <section id="Articles" class="mt-4">
-            <h2>Jeux</h2>
-            <ul class="grid items-center grid-cols-6 gap-4">
-                <li
-                    v-for="game in gamesInStock"
-                    :key="game.id"
-                    class="flex h-16 bg-orange-200 rounded"
-                >
+        <section id="Articles">
+            <h2 class="text-orange-950">
+                <IconsFillTimer class="inline -mt-1 mr-2" />Dernières annonces
+            </h2>
+            <p>
+                Retrouvez ici les derniers jeux mis en vente par nos
+                utilisateurs.
+            </p>
+            <ul class="flex gap-4 flex-wrap mt-2">
+                <li v-for="article in articles" :key="article.id">
+                    <HomeArticlesCard :article="article" />
+                </li>
+                <li>
                     <NuxtLink
-                        :to="'/games/' + game.purchase_id"
-                        class="w-full p-2"
+                        :to="`/articles`"
                     >
-                        {{ game.name }}
+                        <HomeArticlesOtherCard />
                     </NuxtLink>
+                </li>
+            </ul>
+        </section>
+
+        <section id="Trends">
+            <h2 class="text-orange-950">
+                <IconsFillFire class="inline -mt-1 mr-2" />Tendances
+            </h2>
+            <p>Ces jeux convoitent en ce moment l'intérêt de nos joueurs.</p>
+            <ul class="flex gap-4 flex-wrap mt-2">
+                <li v-for="article in articles" :key="article.id">
+                    <HomeArticlesCard :article="article" />
                 </li>
             </ul>
         </section>
