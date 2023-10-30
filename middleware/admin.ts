@@ -10,7 +10,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     }
 
     if (!isAdmin && to.path !== "/connexion") {
-        return navigateTo("/connexion");
+        return navigateTo("/404");
     } else if (isAdmin && to.path === "/connexion") {
         return navigateTo("/dashboard");
     }
