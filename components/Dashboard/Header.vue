@@ -10,21 +10,21 @@ const store = useStore();
     >
         <div class="container mx-auto flex justify-between items-center">
             <div>
-                <h2 class="text-xl m-0">Hello {{ store.user.username }} !</h2>
+                <h2 class="text-xl m-0">Bonjour {{ store.user.username }} !</h2>
             </div>
             <nav>
                 <ul class="flex gap-12 font-semibold">
                     <li v-if="store.user.roles.includes('ADMIN')">
-                        <NuxtLink to="/dashboard/games">Games</NuxtLink>
+                        <NuxtLink to="/dashboard/games">Jeux</NuxtLink>
                     </li>
                     <li v-if="store.user.roles.includes('SALLER')">
-                        <NuxtLink to="/dashboard/purchases">Purchases</NuxtLink>
+                        <NuxtLink to="/dashboard/purchases">Achats</NuxtLink>
                     </li>
                     <li v-if="store.user.roles.includes('SALLER')">
                         <NuxtLink to="/dashboard/articles">Articles</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="/dashboard/account">Account</NuxtLink>
+                        <NuxtLink to="/dashboard/account">Mon compte</NuxtLink>
                     </li>
                 </ul>
             </nav>

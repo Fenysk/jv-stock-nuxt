@@ -12,7 +12,11 @@ definePageMeta({
 const games = ref([]);
 
 const fetchGames = async (search?: string) => {
-    games.value = await getAllGames(search);
+    try {
+        games.value = await getAllGames(search);
+    } catch (error) {
+        games.value = [];
+    }
 };
 
 onMounted(async () => {
@@ -21,10 +25,25 @@ onMounted(async () => {
 </script>
 
 <template>
-    <main class="px-2 py-8 container mx-auto">
-        <h1>Games</h1>
+    <main class="py-8 container mx-auto">
+        <h1>Jeux</h1>
 
-        <input @keyup="fetchGames($event.target.value)" type="text" />
+        <p>
+            C'est ici que vous pouvez gérer les jeux connus par le site et
+            pouvant être ajoutés à une collection.
+        </p>
+
+        <div class="mt-4 flex gap-2 items-center">
+            <input
+                @keyup="fetchGames($event.target.value)"
+                type="text"
+                class="p-2 border border-orange-200 placeholder:text-gray-600 rounded-lg w-fit"
+                placeholder="Rechercher un jeu"
+            />
+            <NuxtLink :to="`/dashboard/games/new`" class="button--primary"
+                >Créer un nouveau jeu</NuxtLink
+            >
+        </div>
 
         <section id="Games" class="mt-8">
             <ul class="flex gap-4 flex-wrap">

@@ -35,7 +35,7 @@ form label {
 }
 
 form input {
-    @apply border-2 border-orange-200 rounded-lg px-6 py-3 text-lg !important;
+    @apply mt-1 border-2 border-orange-200 rounded-lg px-6 py-3 text-lg !important;
 }
 
 form input[type="file"] {
@@ -52,4 +52,12 @@ form button:disabled {
 
 form button.button--secondary {
     @apply border-none text-black underline bg-transparent w-fit px-2 py-0 !important;
+}
+
+.button--primary {
+    @apply border border-orange-300 bg-orange-500 rounded-lg font-semibold text-white px-4 py-2 shadow hover:shadow-md transition hover:translate-y-[-2px] !important;
+}
+
+.button--danger {
+    @apply border border-red-300 bg-red-600 rounded-lg font-semibold text-white px-4 py-2 shadow hover:shadow-md transition hover:translate-y-[-2px] !important;
 }

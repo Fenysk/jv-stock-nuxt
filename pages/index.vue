@@ -19,7 +19,7 @@ const articles = await getAllAvailableArticles();
             <p>Vous avez des jeux qui prennent la poussière ?</p>
             <NuxtLink
                 to="/dashboard/sell"
-                class="ml-4 px-4 py-2 rounded-xl bg-orange-500 text-white font-bold"
+                class="ml-4 button--primary"
                 >Vendez-les !</NuxtLink
             >
         </section>

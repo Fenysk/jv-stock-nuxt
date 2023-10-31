@@ -13,7 +13,25 @@ const game = await getGameById(game_id);
 </script>
 
 <template>
-    <main class="px-2 py-8 container mx-auto">
+    <main class="container mx-auto">
+        <img
+            :src="game.image_url"
+            alt="Game image"
+            class="w-full h-64 object-cover"
+        />
+
         <h1>{{ game.name }}</h1>
+
+        <div class="flex justify-between w-1/3">
+            <NuxtLink :to="'/dashboard/games/'" class="button--primary">
+                Retour
+            </NuxtLink>
+            <NuxtLink
+                :to="'/dashboard/games/edit/' + game.id"
+                class="button--primary"
+            >
+                Modifier
+            </NuxtLink>
+        </div>
     </main>
 </template>
