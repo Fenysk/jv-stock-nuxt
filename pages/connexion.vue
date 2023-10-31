@@ -5,9 +5,9 @@ import { useStore } from "~/store/store";
 const store = useStore();
 
 const formData = ref({
-    username: "Admin",
-    email: "admin@test.test",
-    password: "Admin",
+    username: "",
+    email: "",
+    password: "",
 });
 
 const showPassword = ref(false);

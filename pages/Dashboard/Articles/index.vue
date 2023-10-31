@@ -6,7 +6,7 @@ const store = useStore();
 
 definePageMeta({
     layout: "dashboard",
-    middleware: ["auth", "admin"],
+    middleware: ["auth"],
 });
 
 const myArticles = ref([]);

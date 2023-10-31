@@ -3,7 +3,15 @@ import { useStore } from "~/store/store";
 const store = useStore();
 
 const { getAllAvailableArticles } = useArticles();
-const articles = await getAllAvailableArticles();
+const articles = ref([]);
+
+async function fetchArticles() {
+    articles.value = await getAllAvailableArticles();
+}
+
+onMounted(() => {
+    fetchArticles();
+});
 </script>
 
 <template>
@@ -17,9 +25,7 @@ const articles = await getAllAvailableArticles();
             class="p-4 bg-white border-orange-200 border-2 rounded-xl flex justify-center items-center"
         >
             <p>Vous avez des jeux qui prennent la poussière ?</p>
-            <NuxtLink
-                to="/dashboard/articles/new"
-                class="ml-4 button--primary"
+            <NuxtLink to="/dashboard/articles/new" class="ml-4 button--primary"
                 >Vendez-les !</NuxtLink
             >
         </section>
@@ -37,9 +43,7 @@ const articles = await getAllAvailableArticles();
                     <HomeArticlesCard :article="article" />
                 </li>
                 <li>
-                    <NuxtLink
-                        :to="`/articles`"
-                    >
+                    <NuxtLink :to="`/articles`">
                         <HomeArticlesOtherCard />
                     </NuxtLink>
                 </li>

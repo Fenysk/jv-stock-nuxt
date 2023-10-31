@@ -1,7 +1,15 @@
 <script setup>
-
 const { getAllAvailableArticles } = useArticles();
-const articles = await getAllAvailableArticles();
+
+const articles = ref([]);
+
+async function fetchArticles() {
+    articles.value = await getAllAvailableArticles();
+}
+
+onMounted(() => {
+    fetchArticles();
+});
 
 </script>
 

@@ -1,7 +1,7 @@
 <script setup>
 definePageMeta({
     layout: "dashboard",
-    middleware: ["auth", "admin"],
+    middleware: ["auth"],
 });
 
 const { getAllGames } = useGames();
@@ -191,7 +191,5 @@ const handleCreatePurchase = async () => {
                 </button>
             </div>
         </form>
-
-        <pre>{{ newPurchase }}</pre>
     </main>
 </template>
