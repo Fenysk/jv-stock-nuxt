@@ -10,6 +10,8 @@ const formData = ref({
     password: "Admin",
 });
 
+const showPassword = ref(false);
+
 const loading = ref(false);
 const handleSubmit = async () => {
     loading.value = true;
@@ -58,12 +60,26 @@ const switchMode = () => {
 
             <div id="Password" class="flex flex-col gap-2">
                 <label for="password">Mot de passe</label>
-                <input v-model="formData.password" type="password" />
+                <input
+                    v-model="formData.password"
+                    :type="showPassword ? 'text' : 'password'"
+                />
+                <div class="flex items-center gap-4 mt-2">
+                    <input
+                        v-model="showPassword"
+                        type="checkbox"
+                        id="showPassword"
+                        class="block w-6 h-6"
+                    />
+                    <label for="showPassword">Afficher le mot de passe</label>
+                </div>
             </div>
 
             <button type="submit" v-if="!loading" class="group">
                 {{ mode === "login" ? "Se connecter" : "S'inscrire" }}
-                <IconsArrowRight class="inline ml-2 text-xl group-hover:translate-x-1 transition" />
+                <IconsArrowRight
+                    class="inline ml-2 text-xl group-hover:translate-x-1 transition"
+                />
             </button>
             <button type="submit" disabled v-else>
                 {{
