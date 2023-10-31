@@ -18,7 +18,7 @@ const articles = await getAllAvailableArticles();
         >
             <p>Vous avez des jeux qui prennent la poussière ?</p>
             <NuxtLink
-                to="/dashboard/sell"
+                to="/dashboard/articles/new"
                 class="ml-4 button--primary"
                 >Vendez-les !</NuxtLink
             >

@@ -138,7 +138,7 @@ const handleUploadImage = async (file) => {
                     class="p-2 border border-orange-200 placeholder:text-gray-600 rounded-lg w-full"
                     required
                 >
-                    <option value="FRANCE">France</option>
+                    <option value="FRA">France</option>
                     <option value="EUR">Europe</option>
                     <option value="JPN">Japon</option>
                     <option value="USA">États-Unis</option>

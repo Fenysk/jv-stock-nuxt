@@ -26,7 +26,7 @@ onMounted(async () => {
 
 <template>
     <main class="py-8 container mx-auto">
-        <h1>Jeux</h1>
+        <h1>Index des jeux</h1>
 
         <p>
             C'est ici que vous pouvez gérer les jeux connus par le site et

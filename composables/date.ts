@@ -26,6 +26,14 @@ export const useDate = () => {
             year: "numeric",
             month: "long",
             day: "numeric",
+        });
+    }
+
+    function formattedDateHours(date) {
+        return new Date(date).toLocaleDateString("fr-FR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
             hour: "numeric",
             minute: "numeric",
         });
@@ -34,5 +42,6 @@ export const useDate = () => {
     return {
         formattedReverseDate,
         formattedDate,
+        formattedDateHours,
     };
 };

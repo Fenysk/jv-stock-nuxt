@@ -41,6 +41,27 @@ export const usePurchases = () => {
         }
     };
 
+    const getMySoldedPurchases = async (search?: string) => {
+        try {
+            const response = await axios.get(
+                `${API_URL}/purchase/get/mine/solded`,
+                {
+                    params: {
+                        name: search,
+                    },
+                    headers: {
+                        Authorization: `Bearer ${store.token}`,
+                    },
+                }
+            );
+            const purchases = response.data;
+
+            return purchases;
+        } catch (error) {
+            throw error;
+        }
+    };
+
     const getPurchaseById = async (id: number) => {
         try {
             const response = await axios.get(`${API_URL}/purchase/get/${id}`, {
@@ -115,6 +136,7 @@ export const usePurchases = () => {
     return {
         getAllPurchases,
         getMyPurchases,
+        getMySoldedPurchases,
         getPurchaseById,
         createPurchase,
         updatePurchase,
