@@ -13,13 +13,13 @@ definePageMeta({
         <ul class="flex md:gap-12 gap-6 mx-auto flex-wrap w-fit justify-center">
             <li v-if="store.user.roles.includes('ADMIN')">
                 <NuxtLink id="Link" to="/dashboard/games">
-                    <span>Jeux</span>
+                    <span>Index des jeux</span>
                     <IconsController id="Icon" />
                 </NuxtLink>
             </li>
             <li>
                 <NuxtLink id="Link" to="/dashboard/purchases">
-                    <span>Votre stock de jeux</span>
+                    <span>Votre collection</span>
                     <IconsBox id="Icon" />
                 </NuxtLink>
             </li>

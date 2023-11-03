@@ -33,7 +33,7 @@ const props = defineProps({
             <div id="details" class="flex flex-row justify-between">
                 <div class="flex flex-col max-w-[70%]">
                     <h3
-                        class="mt-1 mb-0 text-lg font-semibold truncate whitespace-nowrap"
+                        class="my-0 text-lg font-semibold truncate whitespace-nowrap"
                     >
                         {{ props.article.Purchase.Game.name }}
                     </h3>
@@ -49,22 +49,37 @@ const props = defineProps({
                     </p>
                 </div>
 
-                <div
-                    id="prices"
-                    class="flex flex-col items-end flex-none gap-1"
-                >
-                    <p
-                        class="px-3 py-1 text-lg font-bold tracking-tight bg-yellow-400 rounded-lg"
-                    >
-                        {{ props.article.price }} €
-                    </p>
+                <div id="prices" class="flex flex-col">
+                    <div class="flex flex-col">
+                        <div
+                            class="flex justify-between gap-1 items-center text-red-700"
+                        >
+                            <IconsArrowDown />
+                            <span>{{ article.Purchase.purchased_price }}</span>
+                        </div>
+                        <div
+                            class="flex justify-between gap-1 items-center text-green-700"
+                        >
+                            <IconsArrowUp />
+                            <span>{{ article.price }}</span>
+                        </div>
+                        <div
+                            class="flex justify-between gap-1 items-center text-yellow-700"
+                        >
+                            <IconsPiggyBank />
+                            <span>{{
+                                article.price - article.Purchase.purchased_price
+                            }}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="flex flex-row items-end justify-between gap-1">
                 <div>
                     <p class="text-xs leading-4 truncate whitespace-nowrap">
-                        le {{ formattedDate(props.article.created_at) }}
+                        Mis en vente le<br />
+                        {{ formattedDate(props.article.created_at) }}
                     </p>
                 </div>
                 <div id="controls" class="flex flex-row justify-end gap-1">
@@ -72,7 +87,7 @@ const props = defineProps({
                         :to="'/articles/' + props.article.id"
                         class="px-2 py-1 text-sm font-semibold transition-all bg-white border rounded-lg whitespace-nowrap hover:px-3"
                     >
-                        Voir l'article</NuxtLink
+                        Voir l'annonce</NuxtLink
                     >
                 </div>
             </div>

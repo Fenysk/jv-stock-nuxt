@@ -29,7 +29,7 @@ onMounted(async () => {
         <h1>Votre collection</h1>
 
         <p>
-            Vous avez <span class="font-semibold">{{ myPurchases.length }}</span> jeux
+            Vous avez <span class="font-semibold">{{ myPurchases.length }}</span> jeu{{ myPurchases.length > 1 ? 'x' : '' }}
             dans votre collection.
         </p>
 

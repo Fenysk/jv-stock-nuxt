@@ -55,9 +55,9 @@ form button.button--secondary {
 }
 
 .button--primary {
-    @apply border border-orange-300 bg-orange-500 rounded-lg font-semibold text-white px-4 py-2 shadow hover:shadow-md transition hover:translate-y-[-2px] !important;
+    @apply cursor-pointer border border-orange-300 bg-orange-500 rounded-lg font-semibold text-white px-4 py-2 shadow hover:shadow-md transition hover:translate-y-[-2px] !important;
 }
 
 .button--danger {
-    @apply border border-red-300 bg-red-600 rounded-lg font-semibold text-white px-4 py-2 shadow hover:shadow-md transition hover:translate-y-[-2px] !important;
+    @apply cursor-pointer border border-red-300 bg-red-600 rounded-lg font-semibold text-white px-4 py-2 shadow hover:shadow-md transition hover:translate-y-[-2px] !important;
 }
